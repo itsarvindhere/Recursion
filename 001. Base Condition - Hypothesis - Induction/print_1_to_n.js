@@ -4,8 +4,7 @@ const print = (n) => {
     if(n === 0){
         return; 
     }
-    // Induction
-    print(n-1);
+    print(n-1); // Recursive Call
     console.log(n);
 }
 
