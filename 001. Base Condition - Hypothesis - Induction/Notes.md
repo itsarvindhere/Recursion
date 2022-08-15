@@ -84,13 +84,15 @@ We can also take the smallest invalid input which is 0, which is just below 1.
 
 So in case of 0, we return nothing but the return keyword means we will not call the function again and just return from there itself.
 
-const print = (n) => {
-    if(n === 0){
-        return; 
+
+    const print = (n) => {
+        if(n === 0){
+            return; 
+        }
+        print(n-1); //Print 1 to n-1 first
+        console.log(n); //Then first n
     }
-    print(n-1);
-    console.log(n);
-}
+
 
 EXAMPLE - print(3)
 
@@ -145,3 +147,29 @@ Finally, since print(2) finished executing, that means inside print(3), we can m
 
 And since our stack is empty, that means all the functions have executed and so, our console has output as -> 1 2 3
 
+---------------------------------------
+THE BEAUTY OF HYPOTHESIS AND INDUCTION
+---------------------------------------
+
+What if we want to print from n to 1? 
+
+Again, in Hypothesis phase, we will define a method which takes a number N and prints from N to 1 in console.
+
+And now, if we have N-1 in input, then method prints from N-1 to 1.
+
+e.g. print(7) will print -> 7 to 1
+    print(6) will print -> 6 to 1
+
+So, as we can notice, if print(6) will print from 6 to 1, then that means the only number left to print is 7 and since we want to print 7 first, that means we will first print 7  in console and then call print() with input as 6 or n-1 which will handle printing of numbers from 6 to 1.
+
+Hence, compared to printing 1 to n, the only difference here is printing N first and then N-1 to 1. In 1 to n problem, we were printing 1 to N-1 first and then N. 
+
+    const print = (n) => {
+        if(n === 0){
+            return; 
+        }
+        console.log(n); //Print n first
+        print(n-1); //Then print n-1 to 1
+    }
+
+Base condition will remain unchanged.
