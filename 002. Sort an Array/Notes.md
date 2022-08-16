@@ -41,3 +41,72 @@ So, our base condition will check if the size of array is 1 then return from the
     if(array.length === 1){
         return;
     }
+
+
+# ANOTHER METHOD
+
+Instead of finding the max element and then replacing the max element with the last element, what we can do is do not do that. 
+
+We simply call the function with all elements except the last element. And when that is called, we need to take the last element and put it in its position in the array. 
+
+The reason to do it this way is to get a better understanding of recursion. Because we will use recursion not just to sort but also to insert the element at a particular place.
+
+
+## EXAMPLE
+
+lets say we have an array = [2,1,3]
+
+We design a method sort([2,1,3]) that takes this array as output and sorts it to [1,2,3]
+
+And inside this method, we call it again but without the last element.
+
+i.e., sort([2,1]) and it gives us [1,2] .
+
+HOW??
+
+Inside sort([2,1]) we will call sort([2])
+
+since [2] has length == 1, that means it is already sorted so from here, we do not need to call sort() any further. This will be our base condition.
+
+Now, inside sort([2,1]) since sort([2]) finished executing, the next thing left is to put the excluded element i.e., 1 in its pproper place. It will come before 2 and hence array becomes [1,2] which is the result of calling sort[2,1]
+
+# HANDLING THE INSERTION OF ELEMENTS AT PROPER PLACE USING RECURSION
+
+One way to insert elements at proper place is using a loop and ccheck each element of array and compare it with the element that we want to place in array.
+
+But, as we know, if something can be done with a loop, it can also be done with Recursion. And so, we can use Recursion here too.
+
+So, this is a separate problem -> INSERT an element in correct place in a sorted array
+
+For this, we build the Hypothesis first.
+
+## HYPOTHESIS
+
+-> We have a method insert() that will take the array and also the element to be inserted into this array. And as a result, it will give a sorted array with the element inserted in it.
+
+e.g. insert([1,2], 3) will give [1,2,3]
+     insert([2], 1) will give [1,2]
+
+## INDUCTION
+
+lets take array [0,1,5] and we have to insert 2 in this array.
+
+If we take out the last element, then that means we have an array [0,1] and we have to insert 2.
+
+Now we can see that because the last element is smaller than the element to insert, we can simply push 2 to this array and return [0,1,2] and that will be one of the base conditions.
+
+Because we had taken out 5 earlier, now we can push that back into this sorted array and so we get [0,1,2,5] which is the required output
+
+
+## BASE CONDITION
+
+If the array in which we have to insert the element is empty, then that means we can simply put the element in array instead of worrying about its placement and comparing with other elements. So, the base condition will be when array is of size 0.
+
+Also, if the element that we want to insert is greater than the largest element in array then also we do not need to compare with rest of elements and we can simply append the element to insert in the end.
+
+So our base condition for insertion becomes -> 
+
+    if(arr.length === 0 || arr[arr.length - 1] <= element){
+        arr.push(element);
+        return arr;
+    }
