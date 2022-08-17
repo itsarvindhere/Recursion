@@ -11,7 +11,7 @@ const deleteMiddle = (stack, middlePos) => {
 }
 
 const remove_Middle_Element = (stack) => {
-    //Since we are following 1-based indexing
+    // To get the position of middle from top of stack, we add 1 to the size/2
     let middle = Math.trunc((stack.length)/2) + 1;
 
     // Calling the deleteMiddle() method and passing in it the stack and the middle element's position from top of stack
