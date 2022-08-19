@@ -44,7 +44,8 @@
 
 const kthSymbol = (n,k) => {
     //Base Condition
-    if(n == 1 && k == 1){
+    //We dont even have to check if k = 1 as well beacuse if n = 1 it will only have one bit i.e., 0
+    if(n == 1){
         return 0;
     }
 
