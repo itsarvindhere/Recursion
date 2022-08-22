@@ -58,7 +58,7 @@ e.g.
    N = 4    0 1 1 0 1 0 0 1
    N = 5    0 1 1 0 1 0 0 1 1 0 0 1 0 1 1 0
 
-If we see, in row 4, we have 0 1 1 0. And the same bits are there in Row 8 till the 4th column.
+If we see, in row 3, we have 0 1 1 0. And the same bits are there in Row 4 till the 4th column.
 
 Similarly, we have  0 1 1 0 1 0 0 1 in the row 4 and the same bits till 8th column in row 5th. 
 
