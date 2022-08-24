@@ -79,11 +79,12 @@ So if there are 5 elements with same digit SUM, pairs = 10
 
 Hence we get a pattern as -
 
-Number of elements       Unique Pairs
-with same digit sum      
     2                       1
+    
     3                       3
+    
     4                       6
+    
     5                       10
 
 
