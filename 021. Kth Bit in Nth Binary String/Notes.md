@@ -136,7 +136,7 @@ Hence, we have three conditions in our code ->
             return '1'
         } else {
            k = numberOfColumns - k + 1;
-           return kth bit of n-1th row
+           return inverse of kth bit of n-1th row
         }
 
 
