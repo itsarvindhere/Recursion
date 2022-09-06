@@ -7,17 +7,7 @@ let sumOfDigits = (digit) => {
     return Math.trunc(digit % 10) + sumOfDigits(Math.trunc(digit/10));
 }
 
-// Recursive Method to find the number of unique pairs if n numbers have the same digit count in the array
-let countOfUniquePairs = (n) => {
-    //Base Condition
-    if(n == 2){
-        return 1;
-    }
-    return (n-1) + countOfUniquePairs(n-1);
-}
-
-
-let arr = [32,50,14,23]
+let arr = [12,30,3]
 let map = new Map();
 let count = 0;
 
@@ -33,7 +23,7 @@ arr.forEach(el => {
 
 //For each count, find how many unique pairs will be there in the array
 map.forEach((v,_) => {
-    if(v > 1) count += countOfUniquePairs(v);
+    if(v > 1) count += v * (v - 1) / 2;
 
 })
 

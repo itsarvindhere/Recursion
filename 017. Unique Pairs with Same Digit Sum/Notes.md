@@ -44,9 +44,9 @@ We will get map as -> {5 -> 3}
 
 This means, there are 3 numbers in the array with sum of digits = 5
 
-Now, we have to find how many unique pairs are there if count = 3 for a given sum. Again, we can use Recursion
+Now, we have to find how many unique pairs are there if count = 3 for a given sum. 
 
-# RECURSIVE APPROACH FOR COUNT OF UNIQUE PAIRS WITH SAME DIGIT SUM
+# COUNT OF UNIQUE PAIRS WITH SAME DIGIT SUM
 
 We see that if array has 3 elements with same digit sum then there are 3 pairs. 
 
@@ -81,17 +81,23 @@ Hence we get a pattern as -
 
     2                       1
     
-    3                       3
+    3                       3  
     
-    4                       6
+    4                       6  
     
-    5                       10
+    5                       10 
 
 
-If we see, if n is the number of elements with same digit sum, then for it, unique pairs = (n-1) + number of unique pairs for (n-1)
-e.g. for 5, it is 10 which is 4 + 6. 4 is 5-1 and 6 is the count of unique pairs for 4.
+So if n is the count of elements, then there will be n * (n-1)/2 pairs
 
-So, we got our recursive pattern here.
+e.g. for n = 5  
+        5 * 4 / 2
+        20/2
+        10 pairs
 
-# BASE CONDITION
-The base condition will be when number of elements with same digit sum = 2. At that time, we know there is only one pair. And we return from there.
+     for n = 6
+        6 * 5 / 2
+        30/2
+        15 pairs   
+
+
